@@ -1,0 +1,15 @@
+.carrusel {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.carrusel img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.text-with-border {
+  color: white;
+  text-shadow: -1px -1px 0 #625f4e, 1px -1px 0 #625f4e, -1px 1px 0 #625f4e,
+    1px 1px 0 #625f4e;
+}
