@@ -11,12 +11,12 @@ const BookForm = () => {
     fechaReserva: "",
     cantidadDias: "",
     numeroPersonas: "",
-    username: "",
-    password: "",
-    nombreCompleto: "",
-    correo: "",
-    telefono: "",
-    repetirPassword: "",
+    NombreUs: "",
+    ApeliidoUs: "",
+    Clave: "",
+    RepetirClave: "",
+    Correo: "",
+    Telefono: "",
   });
   const [precioFinal, setPrecioFinal] = useState(0);
 
@@ -130,7 +130,6 @@ const BookForm = () => {
                 <Form.Label>Valor aproximado de reserva</Form.Label>
                 <h5>${precioFinal}</h5>
               </Form.Group>
-
               <Button variant="primary" type="submit">
                 Iniciar sesión para confirmar reserva
               </Button>
@@ -143,24 +142,33 @@ const BookForm = () => {
             >
               {isRegistering && (
                 <>
-                  <Form.Group controlId="formNombreCompleto">
-                    <Form.Label>Nombre Completo</Form.Label>
+                  <Form.Group controlId="formId">
+                    <Form.Label>Nùmero de documento</Form.Label>
                     <Form.Control
-                      type="text"
-                      placeholder="Ingrese su nombre completo"
-                      name="nombreCompleto"
-                      value={formData.nombreCompleto}
+                      type="number"
+                      placeholder="Ingrese su nùmero de documento"
+                      name="IdUs"
+                      value={formData.IdUs}
                       onChange={handleChange}
                     />
                   </Form.Group>
-
-                  <Form.Group controlId="formCorreo">
-                    <Form.Label>Correo</Form.Label>
+                  <Form.Group controlId="formNombre">
+                    <Form.Label>Nombre </Form.Label>
                     <Form.Control
-                      type="email"
-                      placeholder="Ingrese su correo"
-                      name="correo"
-                      value={formData.correo}
+                      type="text"
+                      placeholder="Ingrese su nombre "
+                      name="nombre"
+                      value={formData.NombreUs}
+                      onChange={handleChange}
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="formApellido">
+                    <Form.Label>Apellido </Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder="Ingrese su apellido "
+                      name="lastName"
+                      value={formData.ApellidoUs}
                       onChange={handleChange}
                     />
                   </Form.Group>
@@ -171,7 +179,7 @@ const BookForm = () => {
                       type="text"
                       placeholder="Ingrese su teléfono"
                       name="telefono"
-                      value={formData.telefono}
+                      value={formData.Telefono}
                       onChange={handleChange}
                     />
                   </Form.Group>
@@ -179,12 +187,12 @@ const BookForm = () => {
               )}
 
               <Form.Group controlId="formUsername">
-                <Form.Label>Usuario</Form.Label>
+                <Form.Label>Correo</Form.Label>
                 <Form.Control
-                  type="text"
-                  placeholder="Ingrese su usuario"
-                  name="username"
-                  value={formData.username}
+                  type="email"
+                  placeholder="Ingrese su correo"
+                  name="email"
+                  value={formData.email}
                   onChange={handleChange}
                   required
                 />
@@ -196,7 +204,7 @@ const BookForm = () => {
                   type="password"
                   placeholder="Ingrese su contraseña"
                   name="password"
-                  value={formData.password}
+                  value={formData.Clave}
                   onChange={handleChange}
                   required
                 />
@@ -209,7 +217,7 @@ const BookForm = () => {
                     type="password"
                     placeholder="Repita su contraseña"
                     name="repetirPassword"
-                    value={formData.repetirPassword}
+                    value={formData.RepetirClave}
                     onChange={handleChange}
                     required
                   />
